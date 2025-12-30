@@ -15,7 +15,7 @@ import {
 } from "lucide-react"
 import { createClient } from "@/lib/server"
 import { Navbar } from "@/components/navbar"
-import { BannerCarousel } from "@/components/banner-carousel"
+// import { BannerCarousel } from "@/components/banner-carousel"
 import { BrandsCarousel } from "@/components/brands-carousel"
 
 export default async function HomePage() {
@@ -32,7 +32,7 @@ export default async function HomePage() {
       <Navbar />
 
       {/* Banner Carousel Component */}
-      <BannerCarousel />
+      {/* <BannerCarousel /> */}
 
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-gradient-to-br from-primary/5 via-background to-primary/10">
@@ -145,6 +145,58 @@ export default async function HomePage() {
         </div>
       </section>
 
+      
+      {/* Brands Carousel Section */}
+      {/* <BrandsCarousel /> */}
+
+      {/* Apartments Section */}
+      <section id="apartments" className="py-20">
+        <div className="container max-w-6xl mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold mb-4">Select Your Community</h2>
+            <p className="text-muted-foreground">Choose your apartment to discover available shops</p>
+          </div>
+
+          {apartments && apartments.length > 0 ? (
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {apartments.map((apartment) => (
+                <Link key={apartment.id} href={`/customer/${apartment.id}`} className="block group">
+                  <Card className="h-full border-2 hover:border-primary hover:shadow-lg transition-all">
+                    <CardContent className="p-6">
+                      <div className="flex items-start gap-4">
+                        <div className="p-3 bg-gradient-to-br from-primary to-primary/80 rounded-xl shadow-lg group-hover:scale-110 transition-transform">
+                          <Building2 className="w-6 h-6 text-primary-foreground" />
+                        </div>
+                        <div className="flex-1">
+                          <h3 className="font-semibold text-lg mb-1 group-hover:text-primary transition-colors">
+                            {apartment.name}
+                          </h3>
+                          <p className="text-sm text-muted-foreground line-clamp-2">{apartment.address}</p>
+                        </div>
+                      </div>
+                      <div className="mt-4 pt-4 border-t border-border flex items-center justify-between text-sm text-muted-foreground">
+                        <span>Browse shops</span>
+                        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                      </div>
+                    </CardContent>
+                  </Card>
+                </Link>
+              ))}
+            </div>
+          ) : (
+            <Card className="max-w-md mx-auto">
+              <CardContent className="p-8 text-center">
+                <Building2 className="w-12 h-12 text-muted-foreground mx-auto mb-4" />
+                <p className="text-muted-foreground mb-4">No apartments available yet</p>
+                <Button variant="outline" asChild>
+                  <Link href="/auth/admin/login">Admin Login</Link>
+                </Button>
+              </CardContent>
+            </Card>
+          )}
+        </div>
+      </section>
+
       {/* Features Section */}
       <section id="features" className="py-20 bg-card/50">
         <div className="container max-w-6xl mx-auto px-4">
@@ -195,56 +247,6 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* Brands Carousel Section */}
-      <BrandsCarousel />
-
-      {/* Apartments Section */}
-      <section id="apartments" className="py-20">
-        <div className="container max-w-6xl mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">Select Your Community</h2>
-            <p className="text-muted-foreground">Choose your apartment to discover available shops</p>
-          </div>
-
-          {apartments && apartments.length > 0 ? (
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {apartments.map((apartment) => (
-                <Link key={apartment.id} href={`/customer/${apartment.id}`} className="block group">
-                  <Card className="h-full border-2 hover:border-primary hover:shadow-lg transition-all">
-                    <CardContent className="p-6">
-                      <div className="flex items-start gap-4">
-                        <div className="p-3 bg-gradient-to-br from-primary to-primary/80 rounded-xl shadow-lg group-hover:scale-110 transition-transform">
-                          <Building2 className="w-6 h-6 text-primary-foreground" />
-                        </div>
-                        <div className="flex-1">
-                          <h3 className="font-semibold text-lg mb-1 group-hover:text-primary transition-colors">
-                            {apartment.name}
-                          </h3>
-                          <p className="text-sm text-muted-foreground line-clamp-2">{apartment.address}</p>
-                        </div>
-                      </div>
-                      <div className="mt-4 pt-4 border-t border-border flex items-center justify-between text-sm text-muted-foreground">
-                        <span>Browse shops</span>
-                        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                      </div>
-                    </CardContent>
-                  </Card>
-                </Link>
-              ))}
-            </div>
-          ) : (
-            <Card className="max-w-md mx-auto">
-              <CardContent className="p-8 text-center">
-                <Building2 className="w-12 h-12 text-muted-foreground mx-auto mb-4" />
-                <p className="text-muted-foreground mb-4">No apartments available yet</p>
-                <Button variant="outline" asChild>
-                  <Link href="/auth/admin/login">Admin Login</Link>
-                </Button>
-              </CardContent>
-            </Card>
-          )}
-        </div>
-      </section>
 
       {/* Footer */}
       <footer className="border-t border-border bg-card py-12">
