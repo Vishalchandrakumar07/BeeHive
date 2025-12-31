@@ -6,6 +6,7 @@ import { ChevronLeft } from "lucide-react"
 import { createClient } from "@/lib/server"
 import { AddApartmentDialog } from "@/components/add-apartment-dialog"
 import { DeleteApartmentButton } from "@/components/delete-apartment-button"
+import { EditApartmentDialog } from "@/components/edit-apartment-dialog"
 
 export default async function ApartmentsPage() {
   const supabase = await createClient()
@@ -67,7 +68,8 @@ export default async function ApartmentsPage() {
                       <TableCell className="text-muted-foreground text-sm">
                         {new Date(apartment.created_at).toLocaleDateString()}
                       </TableCell>
-                      <TableCell className="text-right">
+                      <TableCell className="text-right flex items-center justify-end gap-2">
+                        <EditApartmentDialog apartment={apartment} />
                         <DeleteApartmentButton apartmentId={apartment.id} apartmentName={apartment.name} />
                       </TableCell>
                     </TableRow>

@@ -293,6 +293,7 @@ export function ShopProductsClient({ shop, products, services, apartmentId }: Sh
         onClose={() => setIsCartOpen(false)}
         cart={cart}
         shopPhone={shop.phone}
+        shopName={shop.name}
         onUpdateQuantity={updateQuantity}
       />
     </div>

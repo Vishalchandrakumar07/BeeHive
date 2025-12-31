@@ -19,6 +19,7 @@ export function AddServiceForm({ shopId }: { shopId: string }) {
   const [name, setName] = useState("")
   const [description, setDescription] = useState("")
   const [price, setPrice] = useState("")
+  const [carBrandName, setCarBrandName] = useState("") // added carBrandName field for service providers
   const [imageFile, setImageFile] = useState<File | null>(null)
   const [imagePreview, setImagePreview] = useState<string | null>(null)
   const [isAvailable, setIsAvailable] = useState(true)
@@ -65,6 +66,7 @@ export function AddServiceForm({ shopId }: { shopId: string }) {
         description,
         price: Number.parseFloat(price),
         image_url: imageUrl,
+        car_brand_name: carBrandName || null,
         is_available: isAvailable,
       })
 
@@ -114,6 +116,16 @@ export function AddServiceForm({ shopId }: { shopId: string }) {
                   required
                   value={name}
                   onChange={(e) => setName(e.target.value)}
+                />
+              </div>
+
+              <div className="grid gap-2">
+                <Label htmlFor="carBrandName">Car Brand/Model (if applicable)</Label>
+                <Input
+                  id="carBrandName"
+                  placeholder="e.g., Honda, Toyota, BMW (optional)"
+                  value={carBrandName}
+                  onChange={(e) => setCarBrandName(e.target.value)}
                 />
               </div>
 

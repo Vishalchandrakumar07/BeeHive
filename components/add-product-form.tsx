@@ -73,7 +73,14 @@ export function AddProductForm({ shopId }: AddProductFormProps) {
         is_available: isAvailable,
       })
 
-      if (error) throw error
+      if (error) {
+        console.error("[v0] Insert error details:", error)
+        // If RLS policy error, provide helpful message
+        if (error.message.includes("row-level security")) {
+          throw new Error("Unable to add product. Please check seller permissions or contact admin.")
+        }
+        throw error
+      }
 
       toast.success("Product added successfully!")
       router.push("/seller/dashboard")

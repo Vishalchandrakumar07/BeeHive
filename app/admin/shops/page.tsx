@@ -8,6 +8,7 @@ import { createClient } from "@/lib/server"
 import { AssignShopDialog } from "@/components/assign-shop-dialog"
 import { AddShopDialog } from "@/components/add-shop-dialog"
 import { ToggleShopStatus } from "@/components/toggle-shop-status"
+import { DeleteShopButton } from "@/components/delete-shop-button"
 
 export default async function ShopsPage() {
   const supabase = await createClient()
@@ -107,12 +108,13 @@ export default async function ShopsPage() {
                             ? shop.apartmentAssociations.map((apt: any) => apt.name).join(", ")
                             : "Not assigned"}
                         </TableCell>
-                        <TableCell className="text-right">
+                        <TableCell className="text-right flex items-center justify-end gap-2">
                           <AssignShopDialog
                             shop={shop}
                             apartments={apartments || []}
                             currentApartments={shop.apartmentAssociations}
                           />
+                          <DeleteShopButton shopId={shop.id} shopName={shop.name} />
                         </TableCell>
                       </TableRow>
                     ))}
