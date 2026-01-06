@@ -5,7 +5,7 @@ import { updateSession } from "@/lib/proxy"
 export async function proxy(request: NextRequest) {
   const pathname = request.nextUrl.pathname
 
-  // 🚫 Do NOT run Supabase session logic for seller system
+  // 🚫 Do NOT run Supabase session logic For Technician system
   if (pathname.startsWith("/seller")) {
     return NextResponse.next()
   }

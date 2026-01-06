@@ -70,7 +70,7 @@ export default async function ShopsPage() {
             {!shopsWithApartments || shopsWithApartments.length === 0 ? (
               <div className="text-center py-12">
                 <p className="text-muted-foreground">
-                  No shops registered yet. Add shops manually or wait for sellers to sign up.
+                  No shops registered yet. Add shops manually or wait For Technicians to sign up.
                 </p>
               </div>
             ) : (

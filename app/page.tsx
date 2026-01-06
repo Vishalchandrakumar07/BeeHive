@@ -41,30 +41,29 @@ export default async function HomePage() {
           <div className="text-center max-w-3xl mx-auto mb-16">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
               <Sparkles className="w-4 h-4" />
-              <span>Shop Local, Live Better</span>
+              <span>Quality Service, Live Better</span>
             </div>
 
             <h1 className="text-5xl md:text-6xl font-bold tracking-tight mb-6 bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
-              Your Neighborhood Marketplace
+              Reach Technicians for Daily Need.
             </h1>
 
             <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-              Connect with local shops in your apartment community. Fresh groceries, daily essentials, and more
-              delivered right to your doorstep through WhatsApp.
+              A platform that connects you with trusted, quality technicians for AC, Washing Machine, RO, and Car service & maintenance directly through WhatsApp
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
               <Button size="lg" className="text-base" asChild>
                 <Link href="#apartments">
                   <ShoppingBag className="w-5 h-5 mr-2" />
-                  Start Shopping
+                  Book Service
                   <ArrowRight className="w-5 h-5 ml-2" />
                 </Link>
               </Button>
               <Button size="lg" variant="outline" className="text-base bg-transparent" asChild>
                 <Link href="/auth/seller/sign-up">
                   <Store className="w-5 h-5 mr-2" />
-                  Become a Seller
+                  Become a Technician
                 </Link>
               </Button>
             </div>
@@ -95,7 +94,7 @@ export default async function HomePage() {
                   <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-3">
                     <Store className="w-6 h-6 text-primary" />
                   </div>
-                  <p className="font-semibold text-sm mb-2">Browse Shops</p>
+                  <p className="font-semibold text-sm mb-2">Book Service</p>
                   <p className="text-xs text-muted-foreground">Explore local vendors</p>
                 </div>
 
@@ -108,7 +107,7 @@ export default async function HomePage() {
                   <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-3">
                     <MessageCircle className="w-6 h-6 text-primary" />
                   </div>
-                  <p className="font-semibold text-sm mb-2">Order on WhatsApp</p>
+                  <p className="font-semibold text-sm mb-2">Send Details on WhatsApp</p>
                   <p className="text-xs text-muted-foreground">Quick checkout via chat</p>
                 </div>
 
@@ -120,7 +119,7 @@ export default async function HomePage() {
                   <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-3">
                     <Package className="w-6 h-6 text-primary" />
                   </div>
-                  <p className="font-semibold text-sm mb-2">Quick Delivery</p>
+                  <p className="font-semibold text-sm mb-2">Technician at your Door Step</p>
                   <p className="text-xs text-muted-foreground">Get it to your door</p>
                 </div>
               </div>
@@ -134,7 +133,7 @@ export default async function HomePage() {
               </div>
               <div className="text-center">
                 <div className="text-3xl font-bold text-primary">{shopCount}+</div>
-                <div className="text-sm text-muted-foreground mt-1">Local Shops</div>
+                <div className="text-sm text-muted-foreground mt-1">Technicians</div>
               </div>
               <div className="text-center">
                 <div className="text-3xl font-bold text-primary">100%</div>
@@ -154,7 +153,7 @@ export default async function HomePage() {
         <div className="container max-w-6xl mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-4">Select Your Community</h2>
-            <p className="text-muted-foreground">Choose your apartment to discover available shops</p>
+            <p className="text-muted-foreground">Choose your apartment to Service you better</p>
           </div>
 
           {apartments && apartments.length > 0 ? (
@@ -175,7 +174,7 @@ export default async function HomePage() {
                         </div>
                       </div>
                       <div className="mt-4 pt-4 border-t border-border flex items-center justify-between text-sm text-muted-foreground">
-                        <span>Browse shops</span>
+                        {/* <span>Browse shops</span> */}
                         <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                       </div>
                     </CardContent>
@@ -202,9 +201,9 @@ export default async function HomePage() {
         <div className="container max-w-6xl mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-4">Why Choose BeeHive?</h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
+            {/* <p className="text-muted-foreground max-w-2xl mx-auto">
               Experience the convenience of shopping from your trusted neighborhood stores
-            </p>
+            </p> */}
           </div>
 
           <div className="grid md:grid-cols-3 gap-6">
@@ -213,7 +212,7 @@ export default async function HomePage() {
                 <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
                   <MapPin className="w-6 h-6 text-primary" />
                 </div>
-                <h3 className="font-semibold text-lg mb-2">Hyperlocal Shopping</h3>
+                <h3 className="font-semibold text-lg mb-2">Around Community</h3>
                 <p className="text-muted-foreground text-sm">
                   Browse products from shops right in your apartment complex. Support your local community.
                 </p>
@@ -225,7 +224,7 @@ export default async function HomePage() {
                 <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
                   <Clock className="w-6 h-6 text-primary" />
                 </div>
-                <h3 className="font-semibold text-lg mb-2">Quick Orders</h3>
+                <h3 className="font-semibold text-lg mb-2">Service at Door Step</h3>
                 <p className="text-muted-foreground text-sm">
                   Place orders instantly via WhatsApp. No complicated checkouts or payment hassles.
                 </p>
@@ -237,7 +236,7 @@ export default async function HomePage() {
                 <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
                   <Users className="w-6 h-6 text-primary" />
                 </div>
-                <h3 className="font-semibold text-lg mb-2">Trusted Sellers</h3>
+                <h3 className="font-semibold text-lg mb-2">Trusted Technician</h3>
                 <p className="text-muted-foreground text-sm">
                   Shop from verified local businesses. Build relationships with your neighborhood vendors.
                 </p>
@@ -253,10 +252,10 @@ export default async function HomePage() {
         <div className="container max-w-6xl mx-auto px-4">
           <div className="grid md:grid-cols-4 gap-8">
             <div>
-              <h3 className="font-semibold mb-4">For Customers</h3>
+              <h3 className="font-semibold mb-4">For Guest</h3>
               <div className="space-y-2 text-sm text-muted-foreground">
                 <Link href="#apartments" className="block hover:text-primary">
-                  Browse Shops
+                  Book Service
                 </Link>
                 <Link href="#apartments" className="block hover:text-primary">
                   How It Works
@@ -264,13 +263,13 @@ export default async function HomePage() {
               </div>
             </div>
             <div>
-              <h3 className="font-semibold mb-4">For Sellers</h3>
+              <h3 className="font-semibold mb-4">For Technicians</h3>
               <div className="space-y-2 text-sm text-muted-foreground">
                 <Link href="/auth/seller/sign-up" className="block hover:text-primary">
                   Sign Up
                 </Link>
                 <Link href="/auth/seller/login" className="block hover:text-primary">
-                  Seller Login
+                  Login
                 </Link>
               </div>
             </div>
@@ -289,9 +288,16 @@ export default async function HomePage() {
               </p>
             </div>
           </div>
-          <div className="mt-8 pt-8 border-t border-border text-center text-sm text-muted-foreground">
-            © 2025 BeeHive. All rights reserved.
-          </div>
+          <div className="mt-8 pt-8 border-t border-border flex justify-center">
+  <img
+    src="/logo.jpg"
+    alt="BeeHive logo"
+    className="h-9 opacity-80 hover:opacity-100 transition"
+  />
+</div>
+
+
+
         </div>
       </footer>
     </div>

@@ -99,7 +99,7 @@ export default function SellerDashboard() {
         }
       }
     } else {
-      console.log("[v0] Dashboard: No shop found for seller")
+      console.log("[v0] Dashboard: No shop found For Technician")
     }
 
     setIsLoading(false)

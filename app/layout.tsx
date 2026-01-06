@@ -10,7 +10,7 @@ const _geistMono = Geist_Mono({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
   title: "BeeHive - Apartment Shopping Made Easy",
-  description: "Connect with local shops in your apartment community",
+  description: "Connect with BeeHives in your apartment community",
   generator: "v0.app",
   icons: {
     icon: [

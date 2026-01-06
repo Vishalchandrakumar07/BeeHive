@@ -48,7 +48,7 @@ export function Navbar() {
           {/* Desktop Buttons */}
           <div className="hidden md:flex items-center gap-3">
             <Button variant="ghost" size="sm" asChild>
-              <Link href="/auth/seller/login">Seller Login</Link>
+              <Link href="/auth/seller/login">Login</Link>
             </Button>
             <Button variant="ghost" size="sm" asChild>
               <Link href="/auth/admin/login">Admin</Link>
@@ -92,7 +92,7 @@ export function Navbar() {
 
               <div className="border-t border-border pt-4 mt-2 flex flex-col gap-2">
                 <Button variant="outline" size="sm" asChild className="w-full justify-start bg-transparent">
-                  <Link href="/auth/seller/login">Seller Login</Link>
+                  <Link href="/auth/seller/login">Login</Link>
                 </Button>
                 <Button variant="outline" size="sm" asChild className="w-full justify-start bg-transparent">
                   <Link href="/auth/admin/login">Admin Login</Link>

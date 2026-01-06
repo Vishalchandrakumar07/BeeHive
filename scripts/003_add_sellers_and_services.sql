@@ -41,7 +41,7 @@ ALTER TABLE public.sellers ENABLE ROW LEVEL SECURITY;
 ALTER TABLE public.services ENABLE ROW LEVEL SECURITY;
 ALTER TABLE public.shop_apartments ENABLE ROW LEVEL SECURITY;
 
--- Full CRUD policies for sellers
+-- Full CRUD policies For Technicians
 CREATE POLICY "sellers_select_all" ON public.sellers FOR SELECT USING (true);
 CREATE POLICY "sellers_insert_all" ON public.sellers FOR INSERT WITH CHECK (true);
 CREATE POLICY "sellers_update_all" ON public.sellers FOR UPDATE USING (true);

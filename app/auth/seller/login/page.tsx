@@ -26,7 +26,7 @@ export default function SellerLoginPage() {
     setIsLoading(true)
     setError(null)
 
-    console.log("[v0] Starting seller login with phone:", phone)
+    console.log("[v0] Starting Login with phone:", phone)
 
     try {
       const { data: seller, error: sellerError } = await supabase

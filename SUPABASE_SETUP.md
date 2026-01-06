@@ -1,6 +1,6 @@
 # Supabase Setup Instructions
 
-This document provides step-by-step instructions for setting up your Supabase database and storage for the Local Shopping App.
+This document provides step-by-step instructions for setting up your Supabase database and storage for the BeeHiveping App.
 
 ## Prerequisites
 
@@ -89,7 +89,7 @@ If you want to add storage policies:
 
 Sellers can sign up directly through the app:
 1. Go to the home page
-2. Click "For Sellers"
+2. Click "For Technicians"
 3. Fill out the registration form
 4. Their shop will be created in the database (initially inactive)
 5. Use the admin account to activate shops
